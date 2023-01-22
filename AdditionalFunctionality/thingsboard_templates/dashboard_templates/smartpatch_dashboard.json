@@ -1,0 +1,3349 @@
+{
+  "title": "SmartPatch Dashboard",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "2cc35542-919f-1d2a-55e4-9af33da436f0": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": false,
+            "defaultPageSize": 100,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": false,
+            "enableStickyHeader": false,
+            "enableStickyAction": false,
+            "useRowStyleFunction": false,
+            "entitiesTitle": "Patients",
+            "entityNameColumnTitle": "Patient Name",
+            "reserveSpaceForHiddenAction": "true"
+          },
+          "title": "Patients",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "ab88cf61-a463-e360-862c-fec39cb31274",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "Mac-Address",
+                  "type": "attribute",
+                  "label": "Mac-Address",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6039270708053197,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value != 'disconnected') return value;"
+                }
+              ]
+            }
+          ],
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "To access patient data doubleclick on a patient.",
+          "enableDataExport": false,
+          "widgetStyle": {},
+          "actions": {
+            "rowDoubleClick": [
+              {
+                "name": "Open basestation dashboard state",
+                "icon": "more_horiz",
+                "useShowWidgetActionFunction": null,
+                "showWidgetActionFunction": "return true;",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "patient_state",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openRightLayout": false,
+                "openInSeparateDialog": false,
+                "openInPopover": false,
+                "id": "1ad81089-b687-e09e-0fea-3b30a90848a0"
+              }
+            ]
+          },
+          "titleIcon": "people",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "2cc35542-919f-1d2a-55e4-9af33da436f0"
+      },
+      "12fcbae8-7b15-b54e-c346-24eeb4eb8e78": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "bloodOxygenation",
+                  "type": "timeseries",
+                  "label": "Blood Oxygenation",
+                  "color": "#f3f021",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.8071905426317039,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "min": 0,
+              "max": 100
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "showTooltip": true,
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Blood Oxygenation",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "Blood Oxygenation in percent",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "units": "%",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "12fcbae8-7b15-b54e-c346-24eeb4eb8e78"
+      },
+      "b2e2bddc-b190-acea-f6c5-b2d30f129304": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.29197093029085,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "min": 0,
+              "max": 50
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "showTooltip": true,
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Temperature",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "Measured Body skin temperature of patient",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "units": "°C",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "b2e2bddc-b190-acea-f6c5-b2d30f129304"
+      },
+      "5604dc73-a611-09e7-2378-3a4b389cf530": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "heartrate",
+                  "type": "timeseries",
+                  "label": "Heartrate",
+                  "color": "#13e528",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.7943630930031154,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "showTooltip": true,
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Heartrate",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "Number of measured heartbeats per minute",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "units": "bpm",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "5604dc73-a611-09e7-2378-3a4b389cf530"
+      },
+      "6e5bf076-1478-16a6-b518-f37c48543e21": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "respirationRate",
+                  "type": "timeseries",
+                  "label": "Respiration Rate",
+                  "color": "#f3213c",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": false
+                    }
+                  },
+                  "_hash": 0.11415368933351888,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return 60*value;"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "showTooltip": true,
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            },
+            "comparisonEnabled": true
+          },
+          "title": "Respiration Rate",
+          "dropShadow": false,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "Number of measured breaths per minute",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "units": "bpm",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "6e5bf076-1478-16a6-b518-f37c48543e21"
+      },
+      "762ebcb8-289c-2e6d-61db-a1d5250ea2d2": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "Mac-Address",
+                  "type": "attribute",
+                  "label": "Mac-Address",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9406428534290701,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value==\"disconnected\"){\nreturn \"This Patient does not have an active SmartPatch at the moment\";\n}\nelse{\n    return value;\n}"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "markdownTextPattern": "# Sensor data over time\n\nHave a look at all sensor data acquired for this patient to date.\nAdjust the displayed time window in the dashboard toolbar.\n",
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "762ebcb8-289c-2e6d-61db-a1d5250ea2d2"
+      },
+      "a0486267-2e97-f93d-0387-01ae459e6b87": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "qr_code",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 4,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "Mac-Address",
+                  "type": "attribute",
+                  "label": "Mac-Address",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8547770628658542,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value;"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "qrCodeTextPattern": "${Mac-Address}",
+            "useQrCodeTextFunction": false,
+            "qrCodeTextFunction": "return data[0] ? data[0]['entityName'] : '';"
+          },
+          "title": "QR-Code for currently connected SmartPatch",
+          "showTitleIcon": false,
+          "titleTooltip": "Evaluates to disconnected if no SmartPatch is active for current patient. You can use this code to reconnect SmartPatch with the SmartPatch Connector app. ",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "noDataDisplayMessage": "",
+          "showLegend": false,
+          "titleIcon": "",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a0486267-2e97-f93d-0387-01ae459e6b87"
+      },
+      "f6d33060-19e3-89a7-934b-977e31ca2705": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "attributes_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "lastActivityTime",
+                  "type": "attribute",
+                  "label": "Last Connection",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.07592096267352022,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value) {\n  return moment(value).format(\"DD/MM/YYYY HH:mm:ss\");\n}\nreturn '';\n"
+                },
+                {
+                  "name": "firmwareVersion",
+                  "type": "timeseries",
+                  "label": "Firmware Version",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.9634322692539883,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "Patient SmartPatch Info",
+          "showTitleIcon": false,
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "noDataDisplayMessage": "No SmartPatch has been connected to this patient until now.",
+          "showLegend": false,
+          "titleTooltip": "Additional information for the currently connected SmartPatch.",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "titleIcon": "list",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": false,
+            "showTotal": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "f6d33060-19e3-89a7-934b-977e31ca2705"
+      },
+      "64b086a4-4925-9bc4-93a4-6e651de8746a": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "respirationRate",
+                  "type": "timeseries",
+                  "label": "RR",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.6698295165933528,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value*60;"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "latest value",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "bpm",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "noDataDisplayMessage": "",
+          "showTitleIcon": false,
+          "titleTooltip": "Number of measured breaths per minute"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "64b086a4-4925-9bc4-93a4-6e651de8746a"
+      },
+      "ca397358-eb3a-7cb1-7b93-f3e4f4c38064": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "bloodOxygenation",
+                  "type": "timeseries",
+                  "label": "SpO2",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.7716752876189619,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "latest value",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "%",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "noDataDisplayMessage": "",
+          "showTitleIcon": false,
+          "titleTooltip": "Blood Oxygenation in percent"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "ca397358-eb3a-7cb1-7b93-f3e4f4c38064"
+      },
+      "95cbb320-ebcf-6e7a-6959-8c7d075cd66b": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "heartrate",
+                  "type": "timeseries",
+                  "label": "HR",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.3754045324735211,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "latest value",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "bpm",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "Number of measured heartbeats per minute",
+          "noDataDisplayMessage": "",
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": false,
+            "showTotal": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "95cbb320-ebcf-6e7a-6959-8c7d075cd66b"
+      },
+      "9f6ce182-3884-2c36-800a-e91dab143d95": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "activityLevel",
+                  "type": "timeseries",
+                  "label": "Activity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.6083408038251412,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 1) return \"active\";\nelse return \"inactive\";"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "latest value",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "/5",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "noDataDisplayMessage": "",
+          "showTitleIcon": false,
+          "titleTooltip": "Activity Levels ranking from 1(inactive) to 5(very active) based on measurements of the SmartPatch IMU."
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9f6ce182-3884-2c36-800a-e91dab143d95"
+      },
+      "2572ee1d-e170-c0db-bfc1-3e6011f28bef": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": null
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "### ${entityName}\n \nAdjust the configuration of the selected Basestation or the configuration of all its connected SmartPatches.\n"
+          },
+          "title": "Selected Patient",
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "noDataDisplayMessage": "",
+          "titleIcon": "person"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "2572ee1d-e170-c0db-bfc1-3e6011f28bef"
+      },
+      "4235d137-7282-9312-c184-bb5488a37e57": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "mini_gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "batteryPercentage",
+                  "type": "timeseries",
+                  "label": "batteryPercentage",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.2557429706225549,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 100,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#050505"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 32,
+              "color": "rgba(0, 0, 0, 0.87)"
+            },
+            "minMaxFont": {
+              "family": "Segment7Standard",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "neonGlowBrightness": 0,
+            "roundedLineCap": true,
+            "gaugeType": "donut",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTitle": false,
+            "useFixedLevelColor": true,
+            "fixedLevelColors": [
+              {
+                "from": {
+                  "valueSource": "predefinedValue",
+                  "value": 0
+                },
+                "to": {
+                  "valueSource": "predefinedValue",
+                  "value": 20
+                },
+                "color": "#c52222"
+              },
+              {
+                "from": {
+                  "valueSource": "predefinedValue",
+                  "value": 20
+                },
+                "to": {
+                  "valueSource": "predefinedValue",
+                  "value": 100
+                },
+                "color": "#137331"
+              }
+            ],
+            "defaultColor": "#19793f",
+            "dashThickness": 0,
+            "showTicks": false,
+            "tickWidth": 4,
+            "colorTicks": "#666",
+            "gaugeColor": "#e2e8e7"
+          },
+          "title": "Battery Percentage",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "Battery percentage of connected SmartPatch. Check last connection date to see if the data is up-to-date.",
+          "widgetStyle": {},
+          "noDataDisplayMessage": "",
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "4235d137-7282-9312-c184-bb5488a37e57"
+      },
+      "cb6ac412-b1c6-c602-a98d-0cf3ea7a7bfa": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": false,
+            "defaultPageSize": 100,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": false,
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": false,
+            "enableStickyHeader": true,
+            "enableStickyAction": true,
+            "reserveSpaceForHiddenAction": "true",
+            "useRowStyleFunction": true,
+            "entitiesTitle": "Currently connected SmartPatches"
+          },
+          "title": "Currently connected SmartPatches",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "ab88cf61-a463-e360-862c-fec39cb31274",
+              "filterId": "13e1c426-c29a-97e8-4ecf-c01a358473d6",
+              "dataKeys": [
+                {
+                  "name": "Mac-Address",
+                  "type": "attribute",
+                  "label": "Mac-Address",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.21123509865971113
+                },
+                {
+                  "name": "batteryPercentage",
+                  "type": "timeseries",
+                  "label": "Battery Percentage",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.0033340480837347197,
+                  "units": "%",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "firmwareVersion",
+                  "type": "timeseries",
+                  "label": "Firmware Version",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.1297340479651088,
+                  "units": null,
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "lastConnectTime",
+                  "type": "attribute",
+                  "label": "Last Connection",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6652184678413939,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value) {\n  return moment(value).format(\"DD/MM/YYYY HH:mm:ss\");\n}\nreturn '';"
+                }
+              ]
+            }
+          ],
+          "showTitleIcon": true,
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "noDataDisplayMessage": "",
+          "titleIcon": "devices_other",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "actions": {
+            "actionCellButton": [],
+            "headerButton": [
+              {
+                "name": "Click for more information on currently connected SmartPatches",
+                "icon": "open_in_new",
+                "useShowWidgetActionFunction": null,
+                "showWidgetActionFunction": "return true;",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "smartpatches_overview",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openRightLayout": false,
+                "openInSeparateDialog": false,
+                "openInPopover": false,
+                "id": "bd21a9a1-a3b6-ce1c-aa3f-f410be3f751f"
+              }
+            ],
+            "rowDoubleClick": [
+              {
+                "name": "On doubleclick open Patient Dashboard",
+                "icon": "more_horiz",
+                "useShowWidgetActionFunction": null,
+                "showWidgetActionFunction": "return true;",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "patient_state",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openRightLayout": false,
+                "openInSeparateDialog": false,
+                "openInPopover": false,
+                "id": "000cd456-f56d-f999-34f7-41a613a65b7c"
+              }
+            ]
+          },
+          "decimals": 1
+        },
+        "row": 0,
+        "col": 0,
+        "id": "cb6ac412-b1c6-c602-a98d-0cf3ea7a7bfa"
+      },
+      "967bde9f-8f7c-5dcb-6468-f3801d0caec0": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "timeseries_bars_flot",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "activityLevel",
+                  "type": "timeseries",
+                  "label": "Activity Level",
+                  "color": "#4b21f3",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.4563000876813881,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            },
+            "aggregation": {
+              "limit": 200,
+              "type": "AVG"
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "min": 0,
+              "max": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": true,
+            "tooltipIndividual": false,
+            "defaultBarWidth": 600,
+            "barAlignment": "left",
+            "showTooltip": true,
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Activity Level",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": true,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "One for patient is active and zero for patient is inactive.",
+          "noDataDisplayMessage": "",
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "967bde9f-8f7c-5dcb-6468-f3801d0caec0"
+      },
+      "5095460e-6be8-2304-8764-5a532401acb6": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "6px",
+          "settings": {
+            "markdownTextPattern": "**SmartPatch Data Visualization Platform is a part of the SmartPatch system.**\n",
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "5095460e-6be8-2304-8764-5a532401acb6"
+      },
+      "801bd970-54fd-8667-ba30-e8dc5c3d7ac5": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": false,
+            "defaultPageSize": 100,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": false,
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": false,
+            "enableStickyHeader": true,
+            "enableStickyAction": true,
+            "reserveSpaceForHiddenAction": "true",
+            "useRowStyleFunction": true,
+            "entitiesTitle": "Currently connected SmartPatches"
+          },
+          "title": "Currently connected SmartPatches",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "ab88cf61-a463-e360-862c-fec39cb31274",
+              "filterId": "13e1c426-c29a-97e8-4ecf-c01a358473d6",
+              "dataKeys": [
+                {
+                  "name": "Mac-Address",
+                  "type": "attribute",
+                  "label": "Mac-Address",
+                  "color": "#2196f3",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.21123509865971113
+                },
+                {
+                  "name": "firmwareVersion",
+                  "type": "timeseries",
+                  "label": "Firmware Version",
+                  "color": "#f44336",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.1297340479651088,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "lastConnectTime",
+                  "type": "attribute",
+                  "label": "Last Connection",
+                  "color": "#ffc107",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6652184678413939,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value) {\n  return moment(value).format(\"DD/MM/YYYY HH:mm:ss\");\n}\nreturn '';"
+                },
+                {
+                  "name": "batteryPercentage",
+                  "type": "timeseries",
+                  "label": "Battery Percentage",
+                  "color": "#4caf50",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.0033340480837347197,
+                  "units": "%",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "activityLevel",
+                  "type": "timeseries",
+                  "label": "Activity Level",
+                  "color": "#607d8b",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6739464208474866,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "bloodOxygenation",
+                  "type": "timeseries",
+                  "label": "Blood Oxygenation",
+                  "color": "#8bc34a",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7874346397330254,
+                  "units": "%",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "heartrate",
+                  "type": "timeseries",
+                  "label": "Heartrate",
+                  "color": "#3f51b5",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.31408530116117306,
+                  "units": "bpm",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "respirationRate",
+                  "type": "timeseries",
+                  "label": "Respiration Rate",
+                  "color": "#e91e63",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6546682410020097,
+                  "units": "bpm",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value*60;"
+                },
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "Temperature",
+                  "color": "#ffeb3b",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.880922566393433,
+                  "units": "°C",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "showTitleIcon": true,
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "noDataDisplayMessage": "",
+          "titleIcon": "devices_other",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "decimals": null
+        },
+        "row": 0,
+        "col": 0,
+        "id": "801bd970-54fd-8667-ba30-e8dc5c3d7ac5"
+      },
+      "7cd85e08-d75d-7812-2b20-b990a4582c1f": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "cardCss": ".card {\n    color: #0000EE;\n    text-decoration: underline;\n}",
+            "cardHtml": "<div id='button' class='card'>Click here to access Admin Dashboard</div>"
+          },
+          "title": "Admin Dashboard",
+          "dropShadow": true,
+          "actions": {
+            "elementClick": [
+              {
+                "name": "button",
+                "icon": "more_horiz",
+                "useShowWidgetActionFunction": null,
+                "showWidgetActionFunction": "return true;",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "admin_dashboard_overview",
+                "setEntityId": false,
+                "stateEntityParamName": null,
+                "openRightLayout": false,
+                "openInSeparateDialog": false,
+                "openInPopover": false,
+                "id": "7d6dbd13-edc8-9ce8-939a-c32bb7adc16d"
+              }
+            ]
+          },
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "noDataDisplayMessage": "",
+          "showLegend": false,
+          "showTitleIcon": true,
+          "titleTooltip": "Click on Link will open the SmartPatch Admin Dashboard. Only intended for System Administrator use.",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "titleIcon": "build",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "7cd85e08-d75d-7812-2b20-b990a4582c1f"
+      },
+      "2e8a1cb5-7515-c301-e40a-cec594f5b9bf": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "cardCss": ".card {\n    color: #0000EE;\n}",
+            "cardHtml": "<div id='button' class='card'>\n    <a href=\"url\" class = 'card'>Click here to access Indoor Localization UI</a>\n</div>"
+          },
+          "title": "Indoor Localization UI",
+          "dropShadow": true,
+          "actions": {
+            "elementClick": []
+          },
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "noDataDisplayMessage": "",
+          "showLegend": false,
+          "showTitleIcon": true,
+          "titleTooltip": "Click on Link will open the SmartPatch Indoor Localization UI",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "titleIcon": "map",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "2e8a1cb5-7515-c301-e40a-cec594f5b9bf"
+      },
+      "35a4b3ff-bd23-6b10-9ffe-c7da9f85cb5d": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "markdownTextPattern": "### Welcome to the Admin dashboard\n\nThe Admin Dashboard provides you with the possibility to adjust SmartPatch and Basestation configurations.\nTo update a configuration, select a basestation.\n",
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false
+          },
+          "title": "Use of the Admin Dashboard is only intended for System Administrators",
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "noDataDisplayMessage": "",
+          "actions": {
+            "headerButton": [
+              {
+                "name": "Click to move back to Home Dashboard",
+                "icon": "more_horiz",
+                "useShowWidgetActionFunction": null,
+                "showWidgetActionFunction": "return true;",
+                "type": "openDashboard",
+                "targetDashboardStateId": "overview_state",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openNewBrowserTab": false,
+                "targetDashboardId": "0ac710a0-4d60-11ec-aded-3b83e8424d4d",
+                "openInSeparateDialog": false,
+                "openInPopover": false,
+                "id": "6fbf19ab-3bb9-61e6-de5b-95ecf8d9392c"
+              }
+            ],
+            "elementClick": []
+          },
+          "titleIcon": "warning"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "35a4b3ff-bd23-6b10-9ffe-c7da9f85cb5d"
+      },
+      "0c8b28e6-fb0d-9dc3-84ad-815b32cf368e": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "cardCss": ".card {\n    color:  #0000EE;\n    text-decoration: underline; \n}",
+            "cardHtml": "<div id='button' class=card>Click here to return to Home Dashboard</div>\n"
+          },
+          "title": "Return to Home",
+          "dropShadow": true,
+          "actions": {
+            "elementClick": [
+              {
+                "name": "button",
+                "icon": "more_horiz",
+                "useShowWidgetActionFunction": null,
+                "showWidgetActionFunction": "return true;",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "overview_state",
+                "setEntityId": false,
+                "stateEntityParamName": null,
+                "openRightLayout": false,
+                "openInSeparateDialog": false,
+                "openInPopover": false,
+                "id": "7d6dbd13-edc8-9ce8-939a-c32bb7adc16d"
+              }
+            ]
+          },
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "noDataDisplayMessage": "",
+          "showLegend": false,
+          "showTitleIcon": true,
+          "titleTooltip": "",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "titleIcon": "home",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "0c8b28e6-fb0d-9dc3-84ad-815b32cf368e"
+      },
+      "48c5c74c-7f1a-0830-ab09-4114fa02765e": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "6px",
+          "settings": {
+            "markdownTextPattern": "**SmartPatch Data Visualization Platform is a part of the SmartPatch system.**\n",
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "48c5c74c-7f1a-0830-ab09-4114fa02765e"
+      },
+      "2fbe4fd8-65a3-9e77-81a7-c70d0c3be088": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_shared_integer_attribute",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "SmartPatchConfig",
+                  "type": "attribute",
+                  "label": "SmartPatchConfig",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.7931411168457811,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "showLabel": true,
+            "isRequired": true
+          },
+          "title": "Update SmartPatch configuration",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "2fbe4fd8-65a3-9e77-81a7-c70d0c3be088"
+      },
+      "101ba8b6-6b87-3c78-a28e-d543cb8c2c78": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "Mac-Address",
+                  "type": "attribute",
+                  "label": "Mac-Address",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9406428534290701,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value==\"disconnected\"){\nreturn \"This Patient does not have an active SmartPatch at the moment\";\n}\nelse{\n    return value;\n}"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "markdownTextPattern": "# Update Basestation Configuration\n \nAdjust the configuration of the selected Basestation.\nAn adjusted configuration will be loaded upon restart of ${entityName}.\n\n**Default configuration:**\n\nPublishing to Thingsboard: \n\n*Enabled*\n\nLocal data logging on Basestation: \n\n*Disabled*\n\nPublishing raw data to Thingsboard:\n\n*Disabled*\n\nData Processing on Basestation: \n\n*Enabled*\n\nSave Raw Data on Basestation: \n\n*Disabled*\n\n\n",
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false
+          },
+          "title": "",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "noDataDisplayMessage": "",
+          "titleIcon": "devices_other"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "101ba8b6-6b87-3c78-a28e-d543cb8c2c78"
+      },
+      "67430d72-f13f-751e-aec1-756e17a56310": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_shared_boolean_attribute",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "publishToThingsboard",
+                  "type": "attribute",
+                  "label": "publishToThingsboard",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8176217237946466
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "trueValue": "Enabled",
+            "falseValue": "Disabled"
+          },
+          "title": "Publishing to Thingsboard",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "67430d72-f13f-751e-aec1-756e17a56310"
+      },
+      "b9cce38a-c470-d99a-4e27-457f01b25b4f": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_shared_boolean_attribute",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "saveRawData",
+                  "type": "attribute",
+                  "label": "saveRawData",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8746073277342508
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "trueValue": "Enabled",
+            "falseValue": "Disabled"
+          },
+          "title": "Save Raw Data",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "Save the raw SmartPatch sensor data.",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "b9cce38a-c470-d99a-4e27-457f01b25b4f"
+      },
+      "986991c9-8015-5742-c6cd-b82635ac27cf": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_shared_boolean_attribute",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "publishRawData",
+                  "type": "attribute",
+                  "label": "publishRawData",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.24494395176773942
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "trueValue": "Enabled",
+            "falseValue": "Disabled"
+          },
+          "title": "Publishing Raw Data to Thingsboard",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "Publish the raw SmartPatch sensor data to the Thingsboard database. Only works if Save Raw Data is enabled. If Save Raw Data is enabled and Publishing Raw Data is Disabled, the raw data will be saved on the Basestation device.",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "986991c9-8015-5742-c6cd-b82635ac27cf"
+      },
+      "a0e16e97-0d4e-fda0-86a0-362490e3c389": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_shared_boolean_attribute",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "processData",
+                  "type": "attribute",
+                  "label": "processData",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9332141621070771
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "trueValue": "Enabled",
+            "falseValue": "Disabled"
+          },
+          "title": "Data Processing on Basestation",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a0e16e97-0d4e-fda0-86a0-362490e3c389"
+      },
+      "a0a01a88-bf25-dbf0-e0c4-de1597df4945": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_shared_boolean_attribute",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "localDataLogging",
+                  "type": "attribute",
+                  "label": "localDataLogging",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9368680104171327
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "trueValue": "Enabled",
+            "falseValue": "Disabled"
+          },
+          "title": "Local Data Logging on Basestation",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a0a01a88-bf25-dbf0-e0c4-de1597df4945"
+      },
+      "7076f7c7-b9f5-271e-8894-8828c5c2876d": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "Mac-Address",
+                  "type": "attribute",
+                  "label": "Mac-Address",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9406428534290701,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value==\"disconnected\"){\nreturn \"This Patient does not have an active SmartPatch at the moment\";\n}\nelse{\n    return value;\n}"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "markdownTextPattern": "# Update SmartPatch Configuration\n \nAdjust the configuration of all SmartPatches connected to selected Basestation.\n\n**Default configuration:**\n\n*1*\n\n\n",
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false
+          },
+          "title": "",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "noDataDisplayMessage": "",
+          "titleIcon": "devices_other"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "7076f7c7-b9f5-271e-8894-8828c5c2876d"
+      },
+      "fb5f5a22-4c1b-b3fd-8426-3e1343a1e88a": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": false,
+            "defaultPageSize": 100,
+            "defaultSortOrder": "entityName",
+            "displayEntityName": true,
+            "displayEntityType": false,
+            "enableSelectColumnDisplay": false,
+            "enableStickyHeader": true,
+            "enableStickyAction": true,
+            "reserveSpaceForHiddenAction": "true",
+            "entitiesTitle": "Basestations"
+          },
+          "title": "Basestations",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e705df52-90da-0b7b-eb5c-4fe783401f70",
+              "filterId": null,
+              "dataKeys": []
+            }
+          ],
+          "showTitleIcon": true,
+          "titleTooltip": "To change a Basestation configuration doubleclick on a Basestation.",
+          "widgetStyle": {},
+          "noDataDisplayMessage": "",
+          "titleIcon": "devices_other",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "actions": {
+            "rowDoubleClick": [
+              {
+                "name": "Go to basestation dashboard",
+                "icon": "more_horiz",
+                "useShowWidgetActionFunction": null,
+                "showWidgetActionFunction": "return true;",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "basestation_config",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openRightLayout": false,
+                "openInSeparateDialog": false,
+                "openInPopover": false,
+                "id": "0ef69f51-7503-11c4-84ef-91e12cf93bc7"
+              }
+            ]
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "fb5f5a22-4c1b-b3fd-8426-3e1343a1e88a"
+      },
+      "ae2d03ee-99d6-2997-a7ee-455350481e5e": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.4854294981160132
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "latest value",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "noDataDisplayMessage": "",
+          "showTitleIcon": false,
+          "titleTooltip": "Body skin temperature"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "ae2d03ee-99d6-2997-a7ee-455350481e5e"
+      },
+      "13ce46fa-016f-cd1d-6d2c-3fe94db6d551": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "755887f1-8918-8f11-42cf-180de7313675",
+              "filterId": null,
+              "dataKeys": []
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "markdownTextPattern": "### ${entityName}\nOn this page, the selected Basestation and all its currently connected SmartPatches can be configured.",
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "useMarkdownTextFunction": false
+          },
+          "title": "Selected Basestation",
+          "showTitleIcon": true,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "noDataDisplayMessage": "",
+          "titleIcon": "devices_other"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "13ce46fa-016f-cd1d-6d2c-3fe94db6d551"
+      }
+    },
+    "states": {
+      "patient_state": {
+        "name": "Patient Dashboard",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "12fcbae8-7b15-b54e-c346-24eeb4eb8e78": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 20,
+                "col": 8
+              },
+              "b2e2bddc-b190-acea-f6c5-b2d30f129304": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 15,
+                "col": 8
+              },
+              "5604dc73-a611-09e7-2378-3a4b389cf530": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 15,
+                "col": 16
+              },
+              "6e5bf076-1478-16a6-b518-f37c48543e21": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 20,
+                "col": 16
+              },
+              "762ebcb8-289c-2e6d-61db-a1d5250ea2d2": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 15,
+                "col": 0
+              },
+              "a0486267-2e97-f93d-0387-01ae459e6b87": {
+                "sizeX": 5,
+                "sizeY": 4,
+                "row": 0,
+                "col": 9,
+                "mobileOrder": 3
+              },
+              "f6d33060-19e3-89a7-934b-977e31ca2705": {
+                "sizeX": 9,
+                "sizeY": 4,
+                "row": 8,
+                "col": 0,
+                "mobileOrder": 1
+              },
+              "64b086a4-4925-9bc4-93a4-6e651de8746a": {
+                "sizeX": 8,
+                "sizeY": 4,
+                "row": 8,
+                "col": 9
+              },
+              "ca397358-eb3a-7cb1-7b93-f3e4f4c38064": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "row": 8,
+                "col": 17
+              },
+              "95cbb320-ebcf-6e7a-6959-8c7d075cd66b": {
+                "sizeX": 8,
+                "sizeY": 4,
+                "row": 4,
+                "col": 9
+              },
+              "9f6ce182-3884-2c36-800a-e91dab143d95": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "row": 4,
+                "col": 17
+              },
+              "2572ee1d-e170-c0db-bfc1-3e6011f28bef": {
+                "sizeX": 9,
+                "sizeY": 8,
+                "row": 0,
+                "col": 0,
+                "mobileOrder": 0
+              },
+              "4235d137-7282-9312-c184-bb5488a37e57": {
+                "sizeX": 3,
+                "sizeY": 4,
+                "row": 0,
+                "col": 14,
+                "mobileOrder": 2
+              },
+              "967bde9f-8f7c-5dcb-6468-f3801d0caec0": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 20,
+                "col": 0
+              },
+              "ae2d03ee-99d6-2997-a7ee-455350481e5e": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "row": 0,
+                "col": 17
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      },
+      "overview_state": {
+        "name": "SmartPatch Data Visualization Platform",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "2cc35542-919f-1d2a-55e4-9af33da436f0": {
+                "sizeX": 15,
+                "sizeY": 14,
+                "row": 0,
+                "col": 0
+              },
+              "cb6ac412-b1c6-c602-a98d-0cf3ea7a7bfa": {
+                "sizeX": 12,
+                "sizeY": 11,
+                "row": 0,
+                "col": 15
+              },
+              "5095460e-6be8-2304-8764-5a532401acb6": {
+                "sizeX": 27,
+                "sizeY": 1,
+                "row": 14,
+                "col": 0
+              },
+              "7cd85e08-d75d-7812-2b20-b990a4582c1f": {
+                "sizeX": 6,
+                "sizeY": 3,
+                "row": 11,
+                "col": 21
+              },
+              "2e8a1cb5-7515-c301-e40a-cec594f5b9bf": {
+                "sizeX": 6,
+                "sizeY": 3,
+                "row": 11,
+                "col": 15
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      },
+      "smartpatches_overview": {
+        "name": "SmartPatches Overview Dashboard",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "801bd970-54fd-8667-ba30-e8dc5c3d7ac5": {
+                "sizeX": 25,
+                "sizeY": 13,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      },
+      "admin_dashboard_overview": {
+        "name": "Admin Dashboard",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "35a4b3ff-bd23-6b10-9ffe-c7da9f85cb5d": {
+                "sizeX": 10,
+                "sizeY": 10,
+                "row": 0,
+                "col": 0
+              },
+              "0c8b28e6-fb0d-9dc3-84ad-815b32cf368e": {
+                "sizeX": 10,
+                "sizeY": 2,
+                "row": 10,
+                "col": 0
+              },
+              "48c5c74c-7f1a-0830-ab09-4114fa02765e": {
+                "sizeX": 24,
+                "sizeY": 1,
+                "row": 12,
+                "col": 0
+              },
+              "fb5f5a22-4c1b-b3fd-8426-3e1343a1e88a": {
+                "sizeX": 14,
+                "sizeY": 12,
+                "row": 0,
+                "col": 10
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      },
+      "basestation_config": {
+        "name": "Basestation Dashboard",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "2fbe4fd8-65a3-9e77-81a7-c70d0c3be088": {
+                "sizeX": 6,
+                "sizeY": 6,
+                "row": 0,
+                "col": 18
+              },
+              "101ba8b6-6b87-3c78-a28e-d543cb8c2c78": {
+                "sizeX": 9,
+                "sizeY": 10,
+                "row": 6,
+                "col": 0
+              },
+              "67430d72-f13f-751e-aec1-756e17a56310": {
+                "sizeX": 15,
+                "sizeY": 2,
+                "row": 6,
+                "col": 9
+              },
+              "b9cce38a-c470-d99a-4e27-457f01b25b4f": {
+                "sizeX": 15,
+                "sizeY": 2,
+                "row": 8,
+                "col": 9
+              },
+              "986991c9-8015-5742-c6cd-b82635ac27cf": {
+                "sizeX": 15,
+                "sizeY": 2,
+                "row": 10,
+                "col": 9
+              },
+              "a0e16e97-0d4e-fda0-86a0-362490e3c389": {
+                "sizeX": 15,
+                "sizeY": 2,
+                "row": 12,
+                "col": 9
+              },
+              "a0a01a88-bf25-dbf0-e0c4-de1597df4945": {
+                "sizeX": 15,
+                "sizeY": 2,
+                "row": 14,
+                "col": 9
+              },
+              "7076f7c7-b9f5-271e-8894-8828c5c2876d": {
+                "sizeX": 9,
+                "sizeY": 6,
+                "row": 0,
+                "col": 9
+              },
+              "13ce46fa-016f-cd1d-6d2c-3fe94db6d551": {
+                "sizeX": 9,
+                "sizeY": 6,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "f9992ccb-69c4-ce97-d06c-e639d4d67bb6": {
+        "id": "f9992ccb-69c4-ce97-d06c-e639d4d67bb6",
+        "alias": "All devices",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "SmartPatch",
+          "deviceNameFilter": ""
+        }
+      },
+      "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3": {
+        "id": "e91be3cb-f013-f3ad-91f5-0703e7fd7fa3",
+        "alias": "Selected Patient",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": "",
+          "defaultStateEntity": null
+        }
+      },
+      "89769762-107f-1c75-005b-4bf0060921c5": {
+        "id": "89769762-107f-1c75-005b-4bf0060921c5",
+        "alias": "Selected SmartPatch",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": "SmartPatch",
+          "defaultStateEntity": null
+        }
+      },
+      "ab88cf61-a463-e360-862c-fec39cb31274": {
+        "id": "ab88cf61-a463-e360-862c-fec39cb31274",
+        "alias": "Patients",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "Patient",
+          "deviceNameFilter": ""
+        }
+      },
+      "e705df52-90da-0b7b-eb5c-4fe783401f70": {
+        "id": "e705df52-90da-0b7b-eb5c-4fe783401f70",
+        "alias": "Basestations",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "Basestation",
+          "deviceNameFilter": ""
+        }
+      },
+      "755887f1-8918-8f11-42cf-180de7313675": {
+        "id": "755887f1-8918-8f11-42cf-180de7313675",
+        "alias": "Selected Basestation",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "filters": {
+      "13e1c426-c29a-97e8-4ecf-c01a358473d6": {
+        "id": "13e1c426-c29a-97e8-4ecf-c01a358473d6",
+        "filter": "Has a SmartPatch",
+        "keyFilters": [
+          {
+            "key": {
+              "type": "ATTRIBUTE",
+              "key": "Mac-Address"
+            },
+            "valueType": "STRING",
+            "predicates": [
+              {
+                "keyFilterPredicate": {
+                  "operation": "NOT_EQUAL",
+                  "value": {
+                    "defaultValue": "disconnected",
+                    "dynamicValue": null
+                  },
+                  "ignoreCase": false,
+                  "type": "STRING"
+                },
+                "userInfo": {
+                  "editable": false,
+                  "label": "Mac-Address",
+                  "autogeneratedLabel": false,
+                  "order": 0
+                }
+              }
+            ]
+          }
+        ],
+        "editable": true
+      }
+    },
+    "timewindow": {
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "timewindowMs": 30000,
+        "quickInterval": "CURRENT_DAY",
+        "interval": 1000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": false,
+      "showEntitiesSelect": false,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": false,
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)",
+      "showDashboardLogo": false,
+      "dashboardLogoUrl": null,
+      "hideToolbar": false,
+      "showFilters": false,
+      "showUpdateDashboardImage": false
+    }
+  },
+  "name": "SmartPatch Dashboard"
+}

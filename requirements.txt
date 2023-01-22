@@ -1,0 +1,11 @@
+bleak==0.13.0
+art>=5.3
+termcolor==1.1.0
+tqdm==4.62.3
+paho-mqtt==1.6.1
+numpy>=1.21.5
+tb-rest-client
+tb-mqtt-client
+heartpy~=1.2.7
+scipy==1.7.3
+matplotlib>=3.3.4
