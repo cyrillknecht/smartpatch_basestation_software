@@ -1,6 +1,7 @@
 # SmartPatch Basestation Software v1.0.0
 
 [![Tests](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml/badge.svg)](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Quick overview
