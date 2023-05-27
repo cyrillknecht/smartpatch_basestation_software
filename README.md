@@ -1,5 +1,8 @@
 # SmartPatch Basestation Software v1.0.0
 
+[![Tests](https://img.shields.io/github/workflow/status/cyrillknecht/smartpatch_basestation_software/Pytest/main?label=tests&logo=github&style=flat-square)](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml)
+
+
 ## Quick overview
 Run **run.py** on a Basestation device to connect to SmartPatches over BLE
 and publish acquired data to a [Thingsboard](https://thingsboard.io/) server instance.  
