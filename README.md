@@ -1,6 +1,6 @@
 # SmartPatch Basestation Software v1.0.0
 
-[![Tests](https://img.shields.io/github/workflow/status/cyrillknecht/smartpatch_basestation_software/Pytest/main?label=tests&logo=github&style=flat-square)](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml)
+[![Tests](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml/badge.svg)](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml)
 
 
 ## Quick overview
