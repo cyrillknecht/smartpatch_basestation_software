@@ -8,15 +8,15 @@
 Run **run.py** on a Basestation device to connect to SmartPatches over BLE
 and publish acquired data to a [Thingsboard](https://thingsboard.io/) server instance.  
 Designed to be used with the 
-[SmartPatch Connector App](https://gitlab.ethz.ch/pbl/hs2021/flagship-smart-patch-2021/connector-app-v1).  
+SmartPatch Connector App.  
 A part of the Smartpatch System.
 
 ## What is the SmartPatch System?
 The SmartPatch System includes a SmartPatch for acquiring vital sensor data and a supporting ecosystem consisting of a 
-[Basestation Software](https://gitlab.ethz.ch/pbl/hs2021/flagship-smart-patch-2021/base-station-v1) 
+Basestation Software 
 designed to acquire the Sensor Data on a Basestation device (Raspberry Pi) and publishing it to a Thingsboard Server.
 Further it includes a [Thingsboard](https://thingsboard.io/) server setup to display the acquired data and the 
-[SmartPatch Connector App](https://gitlab.ethz.ch/pbl/hs2021/flagship-smart-patch-2021/connector-app-v1) 
+SmartPatch Connector App,
 available for iOS and Android, that makes it easy to connect SmartPatches and assign them to a patient.
 
 ## Setup of the SmartPatch System
@@ -112,44 +112,44 @@ Basestation has power. To achieve this you have to follow the steps listed below
 1. Open a terminal at your home directory on the Basestation.
 2. Open the bash.rc file
 
-```console
-nano .bashrc
-```
+    ```console
+    nano .bashrc
+    ```
 3. Add the following lines at the end of the file:
 
-```console
-sudo sh -c "/bin/echo 16 > /sys/kernel/debug/bluetooth/hci0/conn_min_interval"
-sudo sh -c "/bin/echo 80 > /sys/kernel/debug/bluetooth/hci0/conn_max_interval"
-sudo sh -c "/bin/echo 500 > /sys/kernel/debug/bluetooth/hci0/supervision_timeout"
-cd base-station-v1
-python3 run.py
-```
+    ```console
+    sudo sh -c "/bin/echo 16 > /sys/kernel/debug/bluetooth/hci0/conn_min_interval"
+    sudo sh -c "/bin/echo 80 > /sys/kernel/debug/bluetooth/hci0/conn_max_interval"
+    sudo sh -c "/bin/echo 500 > /sys/kernel/debug/bluetooth/hci0/supervision_timeout"
+    cd base-station-v1
+    python3 run.py
+    ```
 
 4. Move back to your home directory
 
-```console
-cd /home/pi
-```
+    ```console
+    cd /home/pi
+    ```
 
 5. Open/Create a desktop file in the autostart directory
 
-```console
-sudo nano /home/pi/.config/autostart/basestation.desktop 
-```
+    ```console
+    sudo nano /home/pi/.config/autostart/basestation.desktop 
+    ```
 
 6. Write the following lines in this file:
 
-```shell
-[Desktop Entry]
-Encoding=UTF-8
-Name=Basestation
-Exec=lxterminal
-Icon=lxterminal
-Type=Application
-Categories=Utility;
-```
+    ```shell
+    [Desktop Entry]
+    Encoding=UTF-8
+    Name=Basestation
+    Exec=lxterminal
+    Icon=lxterminal
+    Type=Application
+    Categories=Utility;
+    ```
 
-Now every time you restart your Basestation device should automatically open a terminal window and
+Now every time you restart your Basestation device, it should automatically open a terminal window and
 run the Basestation Software in it.
 
 **Caution: This will not work if the Basestation Software and the Thingsboard Server run on the same device.**
@@ -157,7 +157,7 @@ run the Basestation Software in it.
 ### Connect SmartPatches
 
 To connect SmartPatches to your Basestation and Thingsboard Servers, please use the 
-[SmartPatch Connector App](https://gitlab.ethz.ch/pbl/hs2021/flagship-smart-patch-2021/connector-app-v1).
+SmartPatch Connector App.
 
 ## Further Documentation
 You can find the package documentation in the [doc](/doc) directory of this repository.
