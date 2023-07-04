@@ -1,5 +1,7 @@
 # SmartPatch Basestation Software v1.0.0
 
+![SmartPatch UI](assets/img.png)
+
 [![Tests](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml/badge.svg)](https://github.com/cyrillknecht/smartpatch_basestation_software/actions/workflows/pytest.yml)
 
 ## Quick overview
